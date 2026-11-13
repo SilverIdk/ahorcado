@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Exclusiones de SpotBugs.
+  EI_EXPOSE_REP/EI_EXPOSE_REP2: la app recibe por constructor la entrada/salida de consola
+  (inyección de dependencias para poder probarla); no es una fuga de estado real.
+  CT_CONSTRUCTOR_THROW: los constructores validan argumentos y lanzan IllegalArgumentException a propósito.
+-->
+<FindBugsFilter>
+  <Match>
+    <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2,CT_CONSTRUCTOR_THROW"/>
+  </Match>
+</FindBugsFilter>

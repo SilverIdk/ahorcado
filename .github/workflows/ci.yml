@@ -1,0 +1,42 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main, 'feature/**' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: maven
+
+      - name: Build with Maven (pruebas + cobertura >= 70%)
+        run: mvn -B -DskipTests=false verify
+
+      - name: Checkstyle
+        run: mvn -B checkstyle:check
+
+      - name: SpotBugs
+        run: mvn -B com.github.spotbugs:spotbugs-maven-plugin:4.8.6.0:check
+
+      - name: Subir reporte de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-cobertura-jacoco
+          path: target/site/jacoco/
+
+      - name: Subir jar ejecutable
+        uses: actions/upload-artifact@v4
+        with:
+          name: ahorcado-jar
+          path: target/ahorcado-*.jar

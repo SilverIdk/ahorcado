@@ -1,0 +1,30 @@
+# Diccionario de ejemplo del Ahorcado
+# Formato: DIFICULTAD;palabra   (FACIL, MEDIA, DIFICIL)
+# Líneas vacías o que empiezan con # se ignoran.
+
+FACIL;sol
+FACIL;casa
+FACIL;gato
+FACIL;perro
+FACIL;mesa
+FACIL;luna
+FACIL;árbol
+FACIL;libro
+
+MEDIA;ventana
+MEDIA;teclado
+MEDIA;montaña
+MEDIA;guitarra
+MEDIA;programa
+MEDIA;canción
+MEDIA;escuela
+MEDIA;jirafa
+
+DIFICIL;murciélago
+DIFICIL;esternocleidomastoideo
+DIFICIL;otorrinolaringólogo
+DIFICIL;paralelepípedo
+DIFICIL;refactorización
+DIFICIL;xilófono
+DIFICIL;zapatería
+DIFICIL;onomatopeya
