@@ -229,7 +229,8 @@ public final class AplicacionConsola {
         salida.println();
         salida.println("=== CONFIGURACIÓN ===");
         salida.println("1. Normalizar acentos (á = a): " + (configuracion.isNormalizarAcentos() ? "SÍ" : "NO"));
-        salida.println("2. Semilla: " + (configuracion.getSemilla() == null ? "aleatoria" : configuracion.getSemilla()));
+        Long semilla = configuracion.getSemilla();
+        salida.println("2. Semilla: " + (semilla == null ? "aleatoria" : semilla));
         salida.println("3. Volver");
         salida.print("Elige: ");
         String linea = leerLinea();
